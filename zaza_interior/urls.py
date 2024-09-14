@@ -6,7 +6,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("zaza_interior.web.urls")),
-    path("", include("cms.urls")),
+    path("cms/", include("cms.urls")),
+    path("gallery/", include("zaza_interior.gallery.urls")),
 ]
 
 if settings.DEBUG:

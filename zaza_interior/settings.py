@@ -20,7 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "djangocms_admin_style",
+    # "djangocms_admin_style",
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "djangocms_alias",
     "filer",
     "easy_thumbnails",
+    "zaza_interior.gallery.apps.GalleryConfig"
 ]
 
 MIDDLEWARE = [
@@ -154,9 +155,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 CMS_CONFIRM_VERSION4 = True
 X_FRAME_OPTIONS = "SAMEORIGIN"
-CMS_TEMPLATES = [
-    ('web/index.html', 'Home page template'),
-]
+# CMS_TEMPLATES = [
+#     ('web/index.html', 'Home page template'),
+# ]
 
 # Django filer configs
 THUMBNAIL_HIGH_RESOLUTION = True

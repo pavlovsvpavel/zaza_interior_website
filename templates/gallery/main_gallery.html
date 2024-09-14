@@ -1,0 +1,79 @@
+{% load thumbnail %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Full-Size Modal and Arrows</title>
+    <link rel="stylesheet" href="{% static "styles/styles.css" %}">
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <ul class="gallery">
+        {% for image in images %}
+            <li>
+                <img src="{% thumbnail image 300x300 crop %}" alt="{{ image.name }}" onclick="openModal({{ forloop.counter0 }})">
+            </li>
+        {% empty %}
+            <p>No images uploaded.</p>
+        {% endfor %}
+    </ul>
+    
+    <!-- Modal for full-size image display -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+        <div class="arrow arrow-left" onclick="previousImage()">&#8249;</div>
+        <div class="arrow arrow-right" onclick="nextImage()">&#8250;</div>
+    </div>
+
+<script>
+    // Array of image URLs passed from the Django template
+    const images = [
+        {% for image in images %}
+            "{{ image.url }}"{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    ];
+
+    let currentIndex = 0; // Track the current index of the displayed image
+
+    // Function to open the modal with the selected image
+    function openModal(index) {
+        currentIndex = index;
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("fullImage");
+        modal.style.display = "block";
+        modalImg.src = images[currentIndex]; // Set the image in the modal
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    // Function to show the previous image
+    function previousImage() {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        document.getElementById("fullImage").src = images[currentIndex];
+    }
+
+    // Function to show the next image
+    function nextImage() {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        document.getElementById("fullImage").src = images[currentIndex];
+    }
+
+    // Close the modal when clicking outside the image
+    window.onclick = function(event) {
+        const modal = document.getElementById("myModal");
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>
