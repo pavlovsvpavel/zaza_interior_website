@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "sekizai",
     "djangocms_versioning",
     "djangocms_alias",
+    "filer",
+    "easy_thumbnails",
 ]
 
 MIDDLEWARE = [
@@ -155,3 +157,12 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 CMS_TEMPLATES = [
     ('web/index.html', 'Home page template'),
 ]
+
+# Django filer configs
+THUMBNAIL_HIGH_RESOLUTION = True
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters'
+)
