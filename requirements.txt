@@ -1,0 +1,15 @@
+asgiref==3.8.1
+Django==5.1.1
+django-classy-tags==4.1.0
+django-cms==4.1.2
+django-formtools==2.5.1
+django-fsm==2.8.2
+django-parler==2.3
+django-sekizai==4.1.0
+django-treebeard==4.7.1
+djangocms-admin-style==3.3.1
+djangocms-alias==2.0.1
+djangocms-versioning==2.0.2
+packaging==24.1
+sqlparse==0.5.1
+tzdata==2024.1
