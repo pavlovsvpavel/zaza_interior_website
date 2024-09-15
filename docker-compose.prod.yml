@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - envs/env.prod
+      - envs/.env.prod
     volumes:
       - ./staticfiles:/tmp/zaza_interior/static_files
       - ./mediafiles:/tmp/zaza_interior/mediafiles
