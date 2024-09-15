@@ -3,16 +3,16 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-i=x$!a9fgni8m=od#u_(-2q!az&!dp2%tb@$axj9a0qtop(+jb'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', 1))
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
 
 # Production
 CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
-# Development
+# Development nginx server
 if DEBUG:
     CSRF_TRUSTED_ORIGINS = ['http://localhost:81']
 
@@ -106,7 +106,7 @@ STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
 
-STATIC_ROOT = "/tmp/zaza_interior/static_files"
+STATIC_ROOT = os.environ.get('STATIC_ROOT')
 
 MEDIA_URL = 'media/'
 
