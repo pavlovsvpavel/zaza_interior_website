@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    image: ppavlovp/zaza_interior:dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+#    env_file:
+#      - .env.dev
+    volumes:
+      - ./staticfiles:/tmp/zaza_interior/static_files
+      - ./mediafiles:/tmp/zaza_interior/mediafiles
+      - ./locale:/tmp/zaza_interior/locale
+    platform: linux/amd64
+    command: gunicorn zaza_interior.wsgi:application --bind=0.0.0.0:8000
+
+  nginx:
+    image: nginx
+    ports:
+      - "81:80"
+    volumes:
+      - ./staticfiles:/home/app/web/static_files
+      - ./mediafiles:/home/app/web/mediafiles
+      - ./locale:/home/app/web/locale
+      - ./nginx/dev/conf.d:/etc/nginx/conf.d
+      - ./nginx/dev/logs:/var/log/nginx
+    depends_on:
+      - web

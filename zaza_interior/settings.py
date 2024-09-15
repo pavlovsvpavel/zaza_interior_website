@@ -7,7 +7,14 @@ SECRET_KEY = 'django-insecure-i=x$!a9fgni8m=od#u_(-2q!az&!dp2%tb@$axj9a0qtop(+jb
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
+
+# Production
+CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
+
+# Development
+if DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['http://localhost:81']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -99,9 +106,9 @@ STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
 
-STATIC_ROOT = "static_files"
+STATIC_ROOT = "/tmp/zaza_interior/static_files"
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
@@ -115,3 +122,16 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+FILER_MIME_TYPE_WHITELIST = [
+    "image/*",
+    "video/*",
+]
+
+FILER_STORAGES = {
+    'public': {
+        'main': {
+            'UPLOAD_TO': 'zaza_interior.gallery.helpers.upload_path',
+        },
+    },
+}

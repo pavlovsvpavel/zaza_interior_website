@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery with Full-Size Modal and Arrows</title>
+    <title>Image Gallery</title>
     <link rel="stylesheet" href="{% static "styles/styles.css" %}">
 </head>
 <body>
@@ -14,7 +14,8 @@
     <ul class="gallery">
         {% for image in images %}
             <li>
-                <img src="{% thumbnail image 300x300 crop %}" alt="{{ image.name }}" onclick="openModal({{ forloop.counter0 }})">
+                <p>{{ image.name }}</p>
+                <img src="{% thumbnail image 300x300 crop="smart" %}" alt="{{ image.name }}" onclick="openModal({{ forloop.counter0 }})">
             </li>
         {% empty %}
             <p>No images uploaded.</p>
