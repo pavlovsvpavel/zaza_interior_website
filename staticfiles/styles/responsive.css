@@ -1,0 +1,133 @@
+@media (max-width: 900px) {
+    html {
+        font-size: 14px;
+    }
+
+    .navigation ul {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+
+    .header-elements .site-title a {
+        width: 100px;
+        height: 50px;
+    }
+
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        align-items: stretch;
+        padding-left: 1em;
+        gap: 0.5em;
+        width: 100%;
+    }
+
+    .navigation ul a {
+        padding: 1em 0.5em;
+        font-size: 1.5em;
+    }
+
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -200%;
+        z-index: 10;
+        background-color: #000;
+        opacity: 95%;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.8s ease-out;
+    }
+
+    .open-sidebar-button {
+        display: block;
+    }
+
+    .close-sidebar-button {
+        padding: 1em;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    .hero-section {
+        height: 300px;
+    }
+
+    .headings h1 {
+        font-size: 2em;
+    }
+    .what-we-offer-wrapper {
+        padding: 1em 0 0 0;
+        gap: 0;
+    }
+
+    .what-we-offer-heading h2 {
+        font-size: 1.5em;
+    }
+
+    .what-we-offer-cards {
+        flex-direction: column;
+    }
+
+    .what-we-offer-cards .card {
+        justify-content: space-between;
+    }
+
+    .what-we-offer-cards .card img {
+        height: 70px;
+    }
+
+    .what-we-offer-cards .card h3 {
+        font-size: 1.3em;
+    }
+
+    .get-started-wrapper {
+        padding: 0 0 1em 0;
+    }
+
+    .site-footer .footer-wrapper {
+        justify-content: center;
+    }
+
+    .site-section.gallery-section .container {
+        align-items: center;
+    }
+
+    .gallery-section-wrapper {
+        align-items: center;
+    }
+
+    .gallery-section #gallery {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 100%;
+    }
+
+    .scrollToTopBtn {
+        right: 10px;
+    }
+
+}

@@ -3,4 +3,6 @@
     --site-header-bgnd: #2C2C2C;
     --navigation-text-color: #fff;
     --site-logo-color: #35BF3B;
+    --button-color-primary: var(--site-logo-color);
+    --button-color-hover: #237F27;
 }

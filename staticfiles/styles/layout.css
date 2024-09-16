@@ -10,6 +10,9 @@
 
 .site-header {
     background-color: var(--site-header-bgnd);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .container {
@@ -65,7 +68,7 @@
     text-decoration: none;
     color: #fff;
     border-radius: 0.5em;
-    background-color: var(--site-logo-color);
+    background-color: var(--button-color-primary);
     padding: 0.5em 2em;
     transition: 0.3s ease-in-out;
     margin-top: 1em;
@@ -74,7 +77,7 @@
 }
 
 .headings a:hover {
-    background-color: #237F27;
+    background-color: var(--button-color-hover);
     transition: 0.3s ease-in-out;
 }
 

@@ -1,6 +1,3 @@
-
-
-
 .what-we-offer {
     background-color: var(--site-bgnd);
 }
@@ -12,6 +9,10 @@
     padding: 2em 0;
     /*align-items: center;*/
     flex: 0 100%;
+}
+
+.what-we-offer-heading h2 {
+    padding: 1em 0;
 }
 
 .what-we-offer-heading {
@@ -32,11 +33,12 @@
 .what-we-offer-cards .card {
     display: flex;
     flex-direction: column;
-    flex: 0 1 30%;
+    flex: 1 1 30%;
     background-color: var(--site-logo-color);
     border-radius: 1em;
     padding: 1em;
     align-items: center;
+    justify-content: space-between;
     gap: 2em;
 }
 
@@ -73,10 +75,14 @@
     display: flex;
     align-items: center;
     gap: 1em;
+
 }
 
 .get-started-wrapper .get-started-text svg {
     color: var(--navigation-text-color);
+    height: 30px;
+    width: 30px;
+    flex: 0 1 10%;
 }
 
 .get-started-wrapper p {
@@ -88,7 +94,7 @@
     text-decoration: none;
     color: #fff;
     border-radius: 0.5em;
-    background-color: var(--site-logo-color);
+    background-color: var(--button-color-primary);
     padding: 0.5em 2em;
     transition: 0.3s ease-in-out;
     margin-top: 1em;
@@ -96,6 +102,6 @@
 }
 
 .get-started-wrapper a:hover {
-    background-color: #237F27;
+    background-color: var(--button-color-hover);
     transition: 0.3s ease-in-out;
 }

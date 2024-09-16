@@ -74,3 +74,44 @@
 .navigation ul a:hover::before {
     width: 100%;
 }
+
+.language-form-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.language-form-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.navigation .menu-btn {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(1%) saturate(1107%) hue-rotate(353deg) brightness(117%) contrast(97%);
+}
+
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.navigation .home-link {
+  margin-right: auto;
+}
+
+.navigation svg {
+  fill: #000;
+}
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+  display: none;
+}

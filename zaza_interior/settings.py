@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -57,7 +59,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                "django.template.context_processors.i18n",
+                # "django.template.context_processors.i18n",
             ],
         },
     },
@@ -87,18 +89,20 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGES = [
-    ("en", "English"),
-    ("bg", "Bulgarian"),
-]
-
 LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
+
+LANGUAGES = [
+    ("en", "English"),
+    ("bg", "Bulgarian"),
+]
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 STATIC_URL = 'static/'
 
@@ -110,7 +114,7 @@ STATIC_ROOT = os.environ.get('STATIC_ROOT')
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
+MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'mediafiles'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
