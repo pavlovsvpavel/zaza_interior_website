@@ -1,34 +1,36 @@
+{% extends "base.html" %}
 {% load thumbnail %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
-    <link rel="stylesheet" href="{% static "styles/styles.css" %}">
-</head>
-<body>
-    <h1>Image Gallery</h1>
-    <ul class="gallery">
-        {% for image in images %}
-            <li>
-                <p>{{ image.name }}</p>
-                <img src="{% thumbnail image 300x300 crop="smart" %}" alt="{{ image.name }}" onclick="openModal({{ forloop.counter0 }})">
-            </li>
-        {% empty %}
-            <p>No images uploaded.</p>
-        {% endfor %}
-    </ul>
-    
-    <!-- Modal for full-size image display -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="fullImage">
-        <div class="arrow arrow-left" onclick="previousImage()">&#8249;</div>
-        <div class="arrow arrow-right" onclick="nextImage()">&#8250;</div>
-    </div>
+{% block main_content %}
+    <section class="site-section gallery-section">
+        <div class="container">
+            <div class="gallery-section-wrapper">
+                <h1>Gallery</h1>
+                <ul class="gallery">
+                    {% for image in images %}
+                        <li class="image-card">
+                            {% if image.name %}
+                                <p>{{ image.name }}</p>
+                            {% else %}
+                                <p>No name</p>
+                            {% endif %}
+                            <img src="{% thumbnail image 300x300 crop="smart" %}" alt="{{ image.name }}" onclick="openModal({{ forloop.counter0 }})">
+                        </li>
+                    {% empty %}
+                        <p>No uploaded images.</p>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- Modal for full-size image display -->
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="fullImage">
+                <div class="arrow arrow-left" onclick="previousImage()">&#8249;</div>
+                <div class="arrow arrow-right" onclick="nextImage()">&#8250;</div>
+            </div>
+        </div>
+    </section>
 
 <script>
     // Array of image URLs passed from the Django template
@@ -75,6 +77,4 @@
         }
     }
 </script>
-
-</body>
-</html>
+{% endblock %}

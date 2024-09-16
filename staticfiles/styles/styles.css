@@ -1,3 +1,10 @@
 @import url("reset.css");
 @import url("typography.css");
+@import url("layout.css");
+@import url("variables.css");
+@import url("navigation.css");
+@import url("index.css");
+@import url("how-it-works.css");
 @import url("gallery.css");
+@import url("contacts.css");
+@import url("about.css");

@@ -1,0 +1,101 @@
+
+
+
+.what-we-offer {
+    background-color: var(--site-bgnd);
+}
+
+.what-we-offer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em 0;
+    /*align-items: center;*/
+    flex: 0 100%;
+}
+
+.what-we-offer-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+    color: #ffffff;
+}
+
+.what-we-offer-cards {
+    display: flex;
+    padding: 2em 3em;
+    gap: 2em;
+    /*align-items: stretch;*/
+}
+
+.what-we-offer-cards .card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 30%;
+    background-color: var(--site-logo-color);
+    border-radius: 1em;
+    padding: 1em;
+    align-items: center;
+    gap: 2em;
+}
+
+.what-we-offer-cards .card h3 {
+    font-size: 1.6em;
+}
+
+.what-we-offer-cards .card img {
+    height: 100px;
+    width: auto;
+    padding-bottom: 1em;
+}
+
+
+.what-we-offer-cards .card h3:after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 0.1em;
+    background-color: var(--site-bgnd);
+}
+
+/*Get started section*/
+.get-started-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 0 100%;
+    padding: 0 2em 3em 3em;
+    gap: 1em;
+    color: var(--navigation-text-color);
+}
+
+.get-started-wrapper .get-started-text {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.get-started-wrapper .get-started-text svg {
+    color: var(--navigation-text-color);
+}
+
+.get-started-wrapper p {
+    font-size: 1.2em;
+}
+
+.get-started-wrapper a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 0.5em;
+    background-color: var(--site-logo-color);
+    padding: 0.5em 2em;
+    transition: 0.3s ease-in-out;
+    margin-top: 1em;
+    align-self: center;
+}
+
+.get-started-wrapper a:hover {
+    background-color: #237F27;
+    transition: 0.3s ease-in-out;
+}

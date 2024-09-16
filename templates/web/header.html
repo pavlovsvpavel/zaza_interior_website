@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<header class="site-header">
+    <div class="container">
+        <div class="header-elements">
+            <div class="site-title">
+                <a href="{% url "index" %}">Zaza Logo</a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{% url "how-it-works" %}">{% trans "How it works" %}</a></li>
+                    <li><a href="{% url "main_gallery" %}">{% trans "Gallery" %}</a></li>
+                    <li><a href="{% url "about" %}">{% trans "About us" %}</a></li>
+                    <li><a href="{% url "contacts" %}">{% trans "Contacts" %}</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
