@@ -7,7 +7,6 @@
     flex-direction: column;
     gap: 1em;
     padding: 2em 0;
-    /*align-items: center;*/
     flex: 0 100%;
 }
 
@@ -16,18 +15,15 @@
 }
 
 .what-we-offer-heading {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
     text-align: center;
     color: #ffffff;
 }
 
 .what-we-offer-cards {
-    display: flex;
-    padding: 2em 3em;
-    gap: 2em;
-    /*align-items: stretch;*/
+    padding: 2em 0;
+    gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .what-we-offer-cards .card {
@@ -68,25 +64,17 @@
     flex: 0 100%;
     padding: 0 2em 3em 3em;
     gap: 1em;
+    justify-content: flex-start;
     color: var(--navigation-text-color);
 }
 
 .get-started-wrapper .get-started-text {
     display: flex;
-    align-items: center;
-    gap: 1em;
-
-}
-
-.get-started-wrapper .get-started-text svg {
-    color: var(--navigation-text-color);
-    height: 30px;
-    width: 30px;
-    flex: 0 1 10%;
+    gap: 0.5em;
 }
 
 .get-started-wrapper p {
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .get-started-wrapper a {
