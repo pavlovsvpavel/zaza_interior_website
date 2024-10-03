@@ -14,6 +14,7 @@ services:
       - ./staticfiles:/tmp/zaza_interior/static_files
       - ./mediafiles:/tmp/zaza_interior/mediafiles
       - ./locale:/tmp/zaza_interior/locale
+      - ./db:/home/app/web/db
     platform: linux/amd64
     command: gunicorn zaza_interior.wsgi:application --bind=0.0.0.0:8000
 

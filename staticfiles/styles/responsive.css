@@ -127,4 +127,51 @@
         right: 10px;
     }
 
+    .contact_us_green {
+        grid-template-columns: 1fr;
+    }
+
+    .form-box {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+
+    .full-width {
+        grid-column: 1 / 2;
+    }
+
+    .btn-wrapper {
+        justify-content: center;
+    }
+
+    .contact_us_green .right-side {
+        padding: 0;
+    }
+
+    .contact_us_green .container-box {
+        align-items: center;
+    }
+
+    .contact_us_green .text-box {
+        margin: 0 0 2em;
+    }
+
+    .right-side .text-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact_us_green .text-blk.contactus-head {
+        margin: 0 0 0.5em;
+    }
+
+    .left-side {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .right-side {
+        grid-column: 1;
+        grid-row: 1;
+    }
 }

@@ -36,14 +36,22 @@
 }
 
 .hero-section {
-    background-image: url("../images/hero-bg.jfif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
     color: #fff;
     width: 100%;
     height: 600px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    background-image: url("../images/hero-bg.avif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
 }
 
 .headings {

@@ -2,7 +2,133 @@
 {% block main_content %}
     <section class="site-section site-contacts">
         <div class="container">
-            <h1>Contacts</h1>
+            <div class="contact_us_green">
+                <div class="left-side">
+                    <form class="form-box" method="post">
+                        {% csrf_token %}
+                        <div class="form-group" id="first-name">
+                            <p class="input-title">
+                                {{ form.first_name.label }}
+                            </p>
+                            {{ form.first_name }}
+                        </div>
+                        <div class="form-group" id="last-name">
+                            <p class="input-title">
+                                {{ form.last_name.label }}
+                            </p>
+                            {{ form.last_name }}
+                        </div>
+                        <div class="form-group" id="email">
+                            <p class="input-title">
+                                {{ form.email.label }}
+                            </p>
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group" id="phone-number">
+                            <p class="input-title">
+                                {{ form.phone_number.label }}
+                            </p>
+                            {{ form.phone_number }}
+                        </div>
+                        <div class="form-group full-width" id="message">
+                            <p class="input-title">
+                                {{ form.message.label }}
+                            </p>
+                            {{ form.message }}
+                        </div>
+                        <div class="form-group-small" id="captcha">
+                            <p class="input-title">
+{#                                {{ form.recaptcha.label }}#}
+                            </p>
+                            {{ form.recaptcha }}
+                            {% if form.recaptcha.errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.recaptcha.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="btn-wrapper full-width">
+                            <button class="submit-btn" type="submit">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="right-side">
+                    <div class="container-box">
+                        <div class="text-content">
+                            <h1 class="text-blk contactus-head">
+                                Contact us
+                            </h1>
+                            <p class="text-blk contactus-subhead">
+                                Whether you have a question, feedback, or need assistance, feel free to reach out.
+                                <br>
+                                Just fill out the form, and we'll get back to you as soon as possible.
+                            </p>
+                        </div>
+                        <div class="contacts-box">
+                            <div class="phone text-box">
+                                <img class="contact-svg"
+                                     src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET21.jpg">
+                                <p class="contact-text">
+                                    +359 888 950 936
+                                </p>
+                            </div>
+                            <div class="address text-box">
+                                <img class="contact-svg"
+                                     src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET22.jpg">
+                                <p class="contact-text">
+                                    office@zazainterior.com
+                                </p>
+                            </div>
+                            <div class="mail text-box">
+                                <img class="contact-svg"
+                                     src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET23.jpg">
+                                <p class="contact-text">
+                                    Sofia, Bulgaria
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="successModal" class="modal-contacts" style="display: none;">
+            <div class="modal-content-contacts">
+                <p>Your message has been sent successfully!</p>
+                <button id="okButton">OK</button>
+            </div>
         </div>
     </section>
+
+    <script src="https://www.google.com/recaptcha/api.js?render={{ RECAPTCHA_PUBLIC_KEY }}"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ RECAPTCHA_PUBLIC_KEY }}', {action: 'submit'}).then(function (token) {
+                var recaptchaResponse = document.createElement('input');
+                recaptchaResponse.setAttribute('type', 'hidden');
+                recaptchaResponse.setAttribute('name', 'g-recaptcha-response');
+                recaptchaResponse.setAttribute('value', token);
+                document.forms[0].appendChild(recaptchaResponse);
+            });
+        });
+    </script>
+
+
+    <script>
+        // If the form was successfully submitted, show the modal
+        {% if success %}
+            document.getElementById("successModal").style.display = "flex";
+        {% endif %}
+
+        // Handle the "OK" button click
+        document.getElementById("okButton").onclick = function () {
+            // Redirect to the success_url
+            window.location.href = "{% url 'contacts' %}";
+        };
+
+    </script>
+
 {% endblock %}

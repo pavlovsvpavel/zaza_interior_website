@@ -54,7 +54,7 @@
     position: absolute;
     width: 0;
     height: 3px;
-    background-color: var(--navigation-text-color);
+    background-color: var(--site-logo-color);
     transition: all 0.5s ease-in-out;
 }
 

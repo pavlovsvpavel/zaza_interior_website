@@ -29,7 +29,8 @@ INSTALLED_APPS = [
 
     "filer",
     "easy_thumbnails",
-    "zaza_interior.gallery.apps.GalleryConfig"
+    "zaza_interior.gallery.apps.GalleryConfig",
+    "django_recaptcha",
 ]
 
 MIDDLEWARE = [
@@ -58,8 +59,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                # "django.template.context_processors.i18n",
             ],
         },
     },
@@ -70,7 +69,7 @@ WSGI_APPLICATION = 'zaza_interior.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db/db.sqlite3',
     }
 }
 
@@ -139,3 +138,6 @@ FILER_STORAGES = {
         },
     },
 }
+
+RECAPTCHA_PUBLIC_KEY=config("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY=config("RECAPTCHA_PRIVATE_KEY")

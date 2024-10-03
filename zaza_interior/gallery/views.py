@@ -10,13 +10,7 @@ class MainGalleryView(views.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # Option 1: Load no images on initial load (rely entirely on infinite scroll)
         context["images"] = []
-
-        # Option 2: Load the first set of images (initial page load with some images)
-        # images = Image.objects.all()[:6]
-        # context["images"] = images
 
         return context
 
@@ -35,7 +29,8 @@ class LoadImagesView(views.View):
             images_list.append({
                 'thumbnail_url': thumbnail_url,
                 'full_size_url': image.url,
-                'alt': image.name or "No name"
+                'alt': image.name or "No name",
+                'description': image.description or "No description",
             })
 
         return JsonResponse({
