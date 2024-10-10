@@ -1,3 +1,19 @@
 .site-how-it-works {
     color: #fff;
 }
+
+.site-how-it-works .articles-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+
+}
+
+.site-how-it-works .articles-wrapper article {
+    animation-name: zoom;
+    animation-duration: 0.8s;
+}
+
+.site-how-it-works .articles-wrapper h1 {
+    font-size: 2em;
+}

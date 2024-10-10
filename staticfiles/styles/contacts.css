@@ -84,16 +84,22 @@
   margin: 0 0 2em;
 }
 
-.contact_us_green .contact-svg {
-  padding: 0 25px 0 0;
-  width: 65px;
-  height: 40px;
+.contact_us_green .contacts-box {
+    display: flex;
+    flex-direction: column;
 }
 
 .contact_us_green .text-box {
   display: flex;
   margin: 0 0 50px;
   align-items: center;
+}
+
+.text-box svg {
+    height: 60px;
+    width: 60px;
+    fill: var(--site-header-bgnd);
+    padding-right: 1em;
 }
 
 .contact_us_green .contact-text {

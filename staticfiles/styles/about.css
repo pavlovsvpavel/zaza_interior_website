@@ -1,3 +1,19 @@
 .site-about {
     color: #fff;
 }
+
+.site-about .articles-wrapper-about {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+
+}
+
+.site-about .articles-wrapper-about article {
+    animation-name: zoom;
+    animation-duration: 0.8s;
+}
+
+.site-about .articles-wrapper-about h1 {
+    font-size: 2em;
+}
