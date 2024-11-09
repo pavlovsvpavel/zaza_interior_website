@@ -1,8 +1,11 @@
-FROM python:3.11.10-slim
+FROM python:3.11-slim
 
-RUN apt-get update
-RUN apt upgrade -y
-RUN apt-get install -y gettext
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y apt-utils gettext libpq-dev gcc && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
