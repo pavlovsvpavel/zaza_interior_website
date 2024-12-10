@@ -13,7 +13,7 @@ services:
     volumes:
       - ./staticfiles:/home/app/web/static_files
       - ./mediafiles:/home/app/web/mediafiles
-      - ./locale:/tmp/zaza_interior/locale
-      - ./db:/home/app/web/db
+      - ./locale:/home/app/web/locale
+#      - ./db:/home/app/web/db
     platform: linux/amd64
 

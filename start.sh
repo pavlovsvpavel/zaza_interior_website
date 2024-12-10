@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Migrating database..."
+python manage.py makemigrations
 python manage.py migrate
 
 echo "Collecting static files..."
