@@ -52,7 +52,7 @@ COPY . .
 COPY nginx/render/conf.d/web.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80 (Nginx)
-EXPOSE 80 8000
+EXPOSE 80
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
