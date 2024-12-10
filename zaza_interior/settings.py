@@ -59,6 +59,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -103,13 +104,15 @@ LANGUAGES = [
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
 
 STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
 
-STATIC_ROOT = os.environ.get('STATIC_ROOT')
+# STATIC_ROOT = config('STATIC_ROOT')
 
 MEDIA_URL = '/media/'
 
@@ -139,5 +142,5 @@ FILER_STORAGES = {
     },
 }
 
-RECAPTCHA_PUBLIC_KEY=config("RECAPTCHA_PUBLIC_KEY")
-RECAPTCHA_PRIVATE_KEY=config("RECAPTCHA_PRIVATE_KEY")
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')

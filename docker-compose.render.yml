@@ -1,32 +1,19 @@
 services:
   web:
-    image: ppavlovp/zaza_interior:render
+    image: zaza_interior:render
     build:
       context: .
       dockerfile: Dockerfile
       args:
         DOCKER_BUILDKIT: 1
     ports:
-      - "8000:8000"
+      - "81:80"
     env_file:
-      - ./envs/.env.prod
+      - ./envs/.env.render
     volumes:
       - ./staticfiles:/tmp/zaza_interior/static_files
       - ./mediafiles:/tmp/zaza_interior/mediafiles
       - ./locale:/tmp/zaza_interior/locale
       - ./db:/home/app/web/db
     platform: linux/amd64
-    command: gunicorn zaza_interior.wsgi:application --bind=0.0.0.0:8000
 
-  nginx:
-    image: nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./staticfiles:/home/app/web/static_files
-      - ./mediafiles:/home/app/web/mediafiles
-      - ./locale:/home/app/web/locale
-      - ./nginx/render/conf.d:/etc/nginx/conf.d
-      - ./nginx/render/logs:/var/log/nginx
-    depends_on:
-      - web
