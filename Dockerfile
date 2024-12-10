@@ -49,10 +49,10 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Copy Nginx configuration
-COPY nginx/render/conf.d/web.conf /etc/nginx/conf.d/web.conf
+COPY nginx/render/conf.d/web.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80 (Nginx)
-EXPOSE 80
+EXPOSE 80 8000
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh

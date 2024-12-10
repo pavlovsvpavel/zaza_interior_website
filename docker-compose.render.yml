@@ -11,8 +11,8 @@ services:
     env_file:
       - ./envs/.env.render
     volumes:
-      - ./staticfiles:/tmp/zaza_interior/static_files
-      - ./mediafiles:/tmp/zaza_interior/mediafiles
+      - ./staticfiles:/home/app/web/static_files
+      - ./mediafiles:/home/app/web/mediafiles
       - ./locale:/tmp/zaza_interior/locale
       - ./db:/home/app/web/db
     platform: linux/amd64
