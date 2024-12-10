@@ -51,9 +51,6 @@ COPY . .
 # Copy Nginx configuration
 COPY nginx/render/conf.d/web.conf /etc/nginx/render/conf.d/web.conf
 
-# Expose port 80 (Nginx)
-EXPOSE 80
-
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 CMD ["/bin/bash", "/start.sh"]

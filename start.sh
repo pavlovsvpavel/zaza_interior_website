@@ -11,8 +11,20 @@ echo "Creating locale files..."
 python manage.py makemessages -l bg
 python manage.py compilemessages
 
-echo "Starting Gunicorn and Nginx..."
-gunicorn --bind 0.0.0.0:10000 --access-logfile - --error-logfile - zaza_interior.wsgi:application & nginx -g 'daemon off;'
+# Create superuser if it does not already exist
+echo "Creating superuser..."
+python manage.py shell <<EOF
+from django.contrib.auth import get_user_model
+User = get_user_model()
+if not User.objects.filter(username='admin').exists():
+    User.objects.create_superuser('admin', 'admin@example.com', 'qwer123456')
+EOF
+
+# Start Gunicorn
+gunicorn --bind 0.0.0.0:10000 zaza_interior.wsgi:application &
+
+# Start Nginx (this will run in the foreground)
+nginx -g 'daemon off;'
 
 
 

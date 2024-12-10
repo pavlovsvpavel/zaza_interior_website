@@ -8,12 +8,9 @@ services:
         DOCKER_BUILDKIT: 1
     ports:
       - "80:80"
-    env_file:
-      - ./envs/.env.render
     volumes:
       - ./staticfiles:/home/app/web/static_files
       - ./mediafiles:/home/app/web/mediafiles
       - ./locale:/home/app/web/locale
-#      - ./db:/home/app/web/db
     platform: linux/amd64
 
