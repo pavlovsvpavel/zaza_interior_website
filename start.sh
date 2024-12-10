@@ -21,10 +21,7 @@ if not User.objects.filter(username='admin').exists():
 EOF
 
 # Start Gunicorn
-gunicorn --bind 0.0.0.0:10000 zaza_interior.wsgi:application &
-
-# Start Nginx (this will run in the foreground)
-nginx -g 'daemon off;'
+gunicorn --bind 0.0.0.0:10000 zaza_interior.wsgi:application
 
 
 
