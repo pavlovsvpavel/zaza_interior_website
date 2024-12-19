@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 {% block main_content %}
-    <section class="site-section site-how-it-works">
+
+    <script src="{% static "scripts/articlesAnimation.js" %}"></script>
+    <section class="site-section site-how-it-works" id="articles-section">
         <div class="container">
             <div class="articles-wrapper">
                 <article>

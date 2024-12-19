@@ -69,6 +69,7 @@
 .btn-wrapper {
     display: flex;
     justify-content: flex-end;
+    padding-top: 1em;
 }
 
 .contact_us_green .responsive-cell-block {
@@ -121,16 +122,24 @@
 }
 
 .contact_us_green .submit-btn {
-  min-width: 200px;
-  background-color: var(--button-color-primary);
-  font-weight: 700;
-  border-style: none;
-  color: white;
-  border-radius: 0.5em;
-  margin: 0 auto;
-  cursor: pointer;
-  padding: 0.5em;
+    min-width: 200px;
+    background-color: var(--button-color-primary);
+    font-weight: 700;
+    border-style: none;
+    color: var(--site-bgnd);
+    border-radius: 0.5em;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 0.5em;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+.contact_us_green .submit-btn:hover {
+    background-color: var(--button-color-hover);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
 
 .contact_us_green .input-title {
   font-weight: 600;
@@ -161,5 +170,12 @@
 
 .contact_us_green .submit-btn:hover {
     background-color: var(--button-color-hover);
-    transition: 0.3s ease-in-out;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.errorlist,
+.alert-danger{
+    color: red;
+    list-style: none;
 }

@@ -81,23 +81,24 @@
 .headings a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: var(--site-bgnd);
     border-radius: 0.5em;
     background-color: var(--button-color-primary);
     padding: 0.5em 2em;
-    transition: 0.3s ease-in-out;
     margin-top: 1em;
     align-self: flex-start;
     font-size: 1.2em;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .headings a:hover {
     background-color: var(--button-color-hover);
-    transition: 0.3s ease-in-out;
+    transform: translateY(-5px);
 }
 
 .site-section {
-    padding: 4em 0;
+    padding: 2em 0;
 }
 
 .site-footer {

@@ -11,7 +11,7 @@
 }
 
 .what-we-offer-heading h2 {
-    padding: 1em 0;
+    padding: 1em 0.5em 0;
 }
 
 .what-we-offer-heading {
@@ -80,16 +80,17 @@
 .get-started-wrapper a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: var(--site-bgnd);
     border-radius: 0.5em;
     background-color: var(--button-color-primary);
     padding: 0.5em 2em;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     margin-top: 1em;
     align-self: center;
+    font-weight: 700;
 }
 
 .get-started-wrapper a:hover {
     background-color: var(--button-color-hover);
-    transition: 0.3s ease-in-out;
+    transform: translateY(-5px);
 }

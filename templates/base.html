@@ -9,19 +9,8 @@
     <link rel="stylesheet" href="{% static "styles/styles.css" %}">
     <link href="{% static "images/favicon.ico" %}" rel="icon" type="image/x-icon">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NB5PE3Z0GB"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
+<script src="{% static "scripts/backToTopButton.js" %}"></script>
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-NB5PE3Z0GB');
-</script>
 <body>
 <div class="site">
     {% include "web/header.html" %}
@@ -30,8 +19,9 @@
 
         {% endblock %}
     </main>
+    <button class="scrollToTopBtn"><strong>&#8679;</strong></button>
     {% include "web/footer.html" %}
-    {#        {% include "web/cookies-banner.html" %}#}
+{#            {% include "web/cookies-banner.html" %}#}
 </div>
 </body>
 </html>

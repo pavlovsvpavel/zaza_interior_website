@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render
+from django.utils.translation import get_language
 from django.views import generic as views
 from zaza_interior.web.forms import ContactForm
 
@@ -16,7 +17,8 @@ class ContactsView(views.FormView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['RECAPTCHA_PUBLIC_KEY'] = settings.RECAPTCHA_PUBLIC_KEY  # Add this line
+        context['RECAPTCHA_PUBLIC_KEY'] = settings.RECAPTCHA_PUBLIC_KEY
+
         return context
 
     def get(self, request, *args, **kwargs):
