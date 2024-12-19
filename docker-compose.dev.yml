@@ -1,6 +1,6 @@
 services:
   web:
-    image: ppavlovp/zaza_interior:dev
+    image: zaza_interior:dev
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - envs/.env.dev
+      - ./envs/.env.dev
     volumes:
       - ./staticfiles:/tmp/zaza_interior/static_files
       - ./mediafiles:/tmp/zaza_interior/mediafiles

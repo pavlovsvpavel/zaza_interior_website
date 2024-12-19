@@ -1,6 +1,6 @@
 services:
   web:
-    image: ppavlovp/zaza_interior:prod
+    image: zaza_interior:prod
     build:
       context: .
       dockerfile: Dockerfile

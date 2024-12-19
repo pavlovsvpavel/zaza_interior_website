@@ -1,15 +1,13 @@
 import os
 from pathlib import Path
+from decouple import config, AutoConfig, Csv, Config, RepositoryEnv
 
-from decouple import config
+config = AutoConfig('envs')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
-DEBUG = int(os.environ.get('DEBUG', 1))
-
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Production
 CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
@@ -105,17 +103,14 @@ LANGUAGES = [
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
-
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+STATIC_ROOT = config('STATIC_ROOT')
 
 STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
 
-# STATIC_ROOT = config('STATIC_ROOT')
-
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'mediafiles'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
