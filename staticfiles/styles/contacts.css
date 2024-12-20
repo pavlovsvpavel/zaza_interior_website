@@ -52,11 +52,6 @@
     margin: 0 auto;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
 .full-width {
     grid-column: 1 / 3;
 }

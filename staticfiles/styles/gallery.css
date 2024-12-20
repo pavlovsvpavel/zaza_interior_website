@@ -11,6 +11,8 @@
 }
 
 #loading {
+    padding-top: 1em;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -60,7 +62,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.98);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -75,11 +77,12 @@
 }
 
 .modal-info {
-    max-width: 50%;
+    max-width: 90%;
     width: 100%;
     color: white;
     word-wrap: break-word;
     padding: 10px;
+    text-align: center;
 }
 
 .modal-info p:nth-child(1) {

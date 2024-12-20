@@ -115,6 +115,8 @@ MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'mediafiles'))
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django filer configs
+FILER_UPLOADER_CONNECTIONS = 1
+FILER_UPLOADER_MAX_FILES = 10
 THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
