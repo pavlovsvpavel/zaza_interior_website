@@ -21,6 +21,10 @@
         width: 100px;
         height: auto;
     }
+
+    .form-box {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
 }
 
 @media (max-width: 600px) {
@@ -70,7 +74,7 @@
     }
 
     .close-sidebar-button {
-        padding: 1em;
+        padding: 0.5em;
         display: block;
     }
 
@@ -177,5 +181,18 @@
 
     .language-form-btn span {
         font-size: 1.5em;
+    }
+
+    .contact_us_green .right-side::before {
+        display: none;
+    }
+
+    .text-box svg {
+        height: 40px;
+        width: 40px;
+    }
+
+    .contact_us_green .left-side {
+      padding: 0;
     }
 }

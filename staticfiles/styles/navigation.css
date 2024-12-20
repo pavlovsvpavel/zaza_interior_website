@@ -53,8 +53,7 @@
 }
 
 #nav-menu .nav-link.active {
-    color: var(--site-bgnd);
-    background-color: var(--site-logo-color);
+    color: var(--site-logo-color);
 }
 
 .language-form-btn {
