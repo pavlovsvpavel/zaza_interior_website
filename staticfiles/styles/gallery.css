@@ -165,3 +165,16 @@
 .scrollToTopBtn:hover {
     opacity: 1;
 }
+
+.gallery-section h1 {
+    display: none;
+    margin-bottom: 1em;
+}
+
+.gallery-section h1:after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 0.1em;
+    background-color: var(--button-color-primary);
+}

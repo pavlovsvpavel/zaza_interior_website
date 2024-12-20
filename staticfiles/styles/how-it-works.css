@@ -20,6 +20,19 @@
     transform: translateY(0);
 }
 
-.site-how-it-works .articles-wrapper h1 {
+.site-how-it-works .articles-wrapper h2 {
     font-size: 2em;
+}
+
+.site-how-it-works .articles-wrapper h1 {
+    display: none;
+    margin-bottom: 1em;
+}
+
+.site-how-it-works .articles-wrapper h1:after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 0.1em;
+    background-color: var(--button-color-primary);
 }

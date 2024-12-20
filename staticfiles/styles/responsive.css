@@ -5,7 +5,7 @@
 
     .navigation ul {
         font-size: 0.8em;
-        gap:0.5em;
+        gap: 0.5em;
     }
 
     .hero-section {
@@ -98,6 +98,7 @@
     .headings h1 {
         font-size: 2em;
     }
+
     .what-we-offer-wrapper {
         padding: 1em 0 0 0;
         gap: 0;
@@ -137,7 +138,6 @@
 
     .form-box {
         grid-template-columns: 1fr;
-        width: 90%;
     }
 
     .full-width {
@@ -148,7 +148,7 @@
         justify-content: center;
     }
 
-    .contact_us_green .right-side {
+    .contact_us_green .side-left {
         padding: 0;
     }
 
@@ -160,7 +160,7 @@
         margin: 0 0 2em;
     }
 
-    .right-side .text-content {
+    .side-left .text-content {
         align-items: center;
         text-align: center;
     }
@@ -169,12 +169,12 @@
         margin: 0 0 0.5em;
     }
 
-    .left-side {
+    .side-right {
         grid-column: 1;
         grid-row: 2;
     }
 
-    .right-side {
+    .side-left {
         grid-column: 1;
         grid-row: 1;
     }
@@ -183,7 +183,7 @@
         font-size: 1.5em;
     }
 
-    .contact_us_green .right-side::before {
+    .contact_us_green .side-right::before {
         display: none;
     }
 
@@ -192,7 +192,17 @@
         width: 40px;
     }
 
-    .contact_us_green .left-side {
-      padding: 0;
+    .contact_us_green .side-right {
+        padding: 0;
+    }
+
+    .site-how-it-works .articles-wrapper h1,
+    .site-about .articles-wrapper-about h1,
+    .gallery-section h1 {
+        display: block;
+    }
+
+    .contact_us_green .input-title {
+        margin: 0;
     }
 }

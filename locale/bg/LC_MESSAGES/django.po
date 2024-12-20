@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-16 18:14+0300\n"
+"POT-Creation-Date: 2024-12-20 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pavel Pavlov\n"
 "Language-Team: Pavel Pavlov\n"
@@ -11,21 +11,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\templates\web\header.html:21
-msgid "How it works"
-msgstr "Как работим"
 
-#: .\templates\web\header.html:22
+#: .\templates\gallery\main_gallery.html:9 .\templates\web\header.html:23
 msgid "Gallery"
 msgstr "Фотогалерия"
 
-#: .\templates\web\header.html:23
-msgid "About us"
+#: .\templates\web\about.html:10 .\templates\web\header.html:24
+msgid "About"
 msgstr "За нас"
 
-#: .\templates\web\header.html:24
-msgid "Contacts"
+#: .\templates\web\contacts.html:71 .\templates\web\header.html:25
+msgid "Contact Us"
 msgstr "Контакти"
+
+#: .\templates\web\header.html:22 .\templates\web\how-it-works.html:10
+msgid "How it works"
+msgstr "Как работим"
 
 #: .\templates\web\index.html:10
 msgid "ZAZA Interior"
@@ -40,7 +41,7 @@ msgid "15 years"
 msgstr ""
 
 #: .\templates\web\index.html:14
-msgid "Check our products"
+msgid "Our projects"
 msgstr ""
 
 #: .\templates\web\index.html:22
@@ -56,54 +57,54 @@ msgid "Any budget"
 msgstr ""
 
 #: .\templates\web\index.html:34
-msgid "Fast delivery"
+msgid "Quick build"
 msgstr ""
 
 #: .\templates\web\index.html:38
 msgid "Reliability"
 msgstr ""
 
-#: .\templates\web\index.html:52
+#: .\templates\web\index.html:50
 msgid ""
 "We guarantee to match the price of competitors’ plans using the same "
 "materials and design."
 msgstr ""
 
-#: .\templates\web\index.html:58
+#: .\templates\web\index.html:54
 msgid ""
 "In most cases, our products can be installed in one day, saving you time and "
 "hassles."
 msgstr ""
 
-#: .\templates\web\index.html:64
+#: .\templates\web\index.html:58
 msgid ""
 "Our designers are full of great ideas for your home. Just tell us what you "
 "are dreaming for."
 msgstr ""
 
-#: .\templates\web\index.html:70
+#: .\templates\web\index.html:62
 msgid "We’ll leave your home as neat and clean as it was when we arrived."
 msgstr ""
 
-#: .\templates\web\index.html:76
+#: .\templates\web\index.html:66
 msgid "Our products are simply superior in craftsmanship and design."
 msgstr ""
 
-#: .\templates\web\index.html:82
+#: .\templates\web\index.html:70
 msgid ""
 "What we offer is not just functionality or design. Our offer is a smart "
 "combination of both."
 msgstr ""
 
-#: .\templates\web\index.html:88
+#: .\templates\web\index.html:74
 msgid ""
 "Customer satisfaction is our standard of excellence. If you’re not "
 "satisfied, we’re not finished."
 msgstr ""
 
-#: .\templates\web\index.html:90
+#: .\templates\web\index.html:76
 msgid "Contact us"
-msgstr ""
+msgstr "Контакти"
 
 #: .\zaza_interior\gallery\validators.py:8
 msgid "The maximum file size should not exceed 9MB"
