@@ -1,5 +1,8 @@
 from django.conf import settings
+from django.core.mail import send_mail, EmailMessage
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from django.utils.translation import get_language
 from django.views import generic as views
 from zaza_interior.web.forms import ContactForm
@@ -28,9 +31,31 @@ class ContactsView(views.FormView):
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
-            # Process form data here, e.g., send an email, save to database, etc.
-            # form.cleaned_data['name'], form.cleaned_data['email'], etc.
-            return render(request, self.template_name, {'form': form, 'success': True})
+            subject = "ZazaInterior New Contact Form"
+
+            email_content = render_to_string('web/email_template.html', {
+                'first_name': form.cleaned_data['first_name'],
+                'last_name': form.cleaned_data['last_name'],
+                'email': form.cleaned_data['email'],
+                'phone_number': form.cleaned_data['phone_number'],
+                'message': form.cleaned_data['message'],
+            })
+
+            from_email = form.cleaned_data['email']
+            recipient_list = [settings.DEFAULT_FROM_EMAIL]
+
+            try:
+                email = EmailMessage(
+                    subject, email_content, from_email, recipient_list
+                )
+                email.content_subtype = "html"
+                email.send(fail_silently=False)
+
+                return self.render_to_response(self.get_context_data(form=form, success=True))
+
+            except Exception as e:
+                return HttpResponse(f"Error sending email: {e}")
+
 
 
         return render(request, self.template_name, {'form': form})
