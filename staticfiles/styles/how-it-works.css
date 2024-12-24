@@ -9,17 +9,6 @@
     padding: 0 1em;
 }
 
-.site-how-it-works .articles-wrapper article {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.site-how-it-works .articles-wrapper .article-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .site-how-it-works .articles-wrapper h2 {
     font-size: 2em;
 }

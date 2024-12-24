@@ -9,17 +9,6 @@
     padding: 0 1em;
 }
 
-.site-about .articles-wrapper-about article {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.site-about .articles-wrapper-about .article-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .site-about .articles-wrapper-about h2 {
     font-size: 2em;
 }

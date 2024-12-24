@@ -3,77 +3,81 @@
 {% load i18n %}
 
 {% block main_content %}
-    <section class="site-section hero-section">
+    <script src="{% static "scripts/articlesAnimation.js" %}"></script>
+    <section class="site-section hero-section" id="articles-section">
         <div class="container">
-            <div class="headings">
+            <article class="headings">
                 <h1>
                     <span class="highlight">{% trans "ZAZA Interior" %}</span>
                     {% trans " has been making homes more beautiful and practical for more than " %}
                     <span class="highlight">{% trans "15 years" %}</span>
                 </h1>
                 <a href="{% url "main_gallery" %}">{% trans "Our projects" %}</a>
-            </div>
+            </article>
         </div>
     </section>
-    <section class="what-we-offer">
+    <section class="what-we-offer" id="articles-section">
         <div class="container">
             <div class="what-we-offer-wrapper">
-                <div class="what-we-offer-heading">
+                <article class="what-we-offer-heading">
                     <h2>{% trans "Our team is experienced and professionally trained." %}</h2>
-                </div>
+                </article>
                 <div class="what-we-offer-cards">
-                    <div class="card">
+                    <article class="card">
                         <h3>{% trans "Any time" %}</h3>
                         <img src="{% static "images/clock-regular.svg" %}" alt="clock-icon" width="70" height="70">
-                    </div>
-                    <div class="card">
+                    </article>
+                    <article class="card">
                         <h3>{% trans "Any budget" %}</h3>
                         <img src="{% static "images/dollar-sign-solid.svg" %}" alt="dollar-sign" width="70" height="70">
-                    </div>
-                    <div class="card">
+                    </article>
+                    <article class="card">
                         <h3>{% trans "Quick build" %}</h3>
                         <img src="{% static "images/hand-back-fist-solid.svg" %}" alt="build-icon" width="70" height="70">
-                    </div>
-                    <div class="card">
+                    </article>
+                    <article class="card">
                         <h3>{% trans "Reliability" %}</h3>
                         <img src="{% static "images/thumbs-up-solid.svg" %}" alt="thumbs-up-icon" width="70" height="70">
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
-    <section class="get-started">
+    <section class="get-started" id="articles-section">
         <div class="container">
             <div class="get-started-wrapper">
-                <div class="get-started-text">
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "We guarantee to match the price of competitors’ plans using the same materials and design." %}</p>
-                </div>
-                <div class="get-started-text">
+                </article>
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "In most cases, our products can be installed in one day, saving you time and hassles." %}</p>
-                </div>
-                <div class="get-started-text">
+                </article>
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "Our designers are full of great ideas for your home. Just tell us what you are dreaming for." %}</p>
-                </div>
-                <div class="get-started-text">
+                </article>
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "We’ll leave your home as neat and clean as it was when we arrived." %}</p>
-                </div>
-                <div class="get-started-text">
+                </article>
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "Our products are simply superior in craftsmanship and design." %}</p>
-                </div>
-                <div class="get-started-text">
+                </article>
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "What we offer is not just functionality or design. Our offer is a smart combination of both." %}</p>
-                </div>
-                <div class="get-started-text">
+                </article>
+                <article class="get-started-text">
                     <p>&#9989;</p>
                     <p>{% trans "Customer satisfaction is our standard of excellence. If you’re not satisfied, we’re not finished." %}</p>
-                </div>
-                <a href="{% url "contacts" %}">{% trans "Contact us" %}</a>
+                </article>
+                <article class="get-started-button">
+                    <a href="{% url "contacts" %}">{% trans "Contact us" %}</a>
+                </article>
+
             </div>
         </div>
     </section>

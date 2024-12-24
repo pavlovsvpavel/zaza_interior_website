@@ -22,9 +22,10 @@
         height: auto;
     }
 
-    .form-box {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    .form-box div {
+        grid-column: 1 / -1;
     }
+
 }
 
 @media (max-width: 600px) {
@@ -136,16 +137,8 @@
         grid-template-columns: 1fr;
     }
 
-    .form-box {
-        grid-template-columns: 1fr;
-    }
-
     .full-width {
         grid-column: 1 / 2;
-    }
-
-    .btn-wrapper {
-        justify-content: center;
     }
 
     .contact_us_green .side-left {

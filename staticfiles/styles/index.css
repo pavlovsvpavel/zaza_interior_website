@@ -77,6 +77,12 @@
     font-size: 1.3em;
 }
 
+.get-started-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .get-started-wrapper a {
     display: block;
     text-decoration: none;

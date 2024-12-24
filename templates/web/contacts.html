@@ -2,12 +2,10 @@
 {% load i18n %}
 {% load static %}
 {% block main_content %}
-
     <script src="{% static "scripts/articlesAnimation.js" %}"></script>
     <section class="site-section site-contacts">
         <div class="container">
             <div class="contact_us_green" id="articles-section">
-
                 <article class="side-left">
                     <div class="container-box">
                         <div class="text-content">
@@ -27,7 +25,7 @@
                                     <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
                                 </svg>
                                 <p class="contact-text">
-                                    +359 888 950 936
+                                    +359888123456
                                 </p>
                             </div>
                             <div class="address text-box">
@@ -36,7 +34,7 @@
                                     <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
                                 </svg>
                                 <p class="contact-text">
-                                    office@zazainterior.com
+                                    office@example.com
                                 </p>
                             </div>
                             <div class="mail text-box">
@@ -52,57 +50,9 @@
                     </div>
                 </article>
                 <article class="side-right">
-                    <form class="form-box" method="post">
+                    <form class="form-box" action="{% url 'contacts' %}" method="post" novalidate>
+                        {{ form }}
                         {% csrf_token %}
-                        <div class="form-group" id="first-name">
-                            <p class="input-title">
-                                {{ form.first_name.label }}
-                            </p>
-                            {{ form.first_name }}
-                        </div>
-                        <div class="form-group" id="last-name">
-                            <p class="input-title">
-                                {{ form.last_name.label }}
-                            </p>
-                            {{ form.last_name }}
-                        </div>
-                        <div class="form-group" id="email">
-                            <p class="input-title">
-                                {{ form.email.label }}
-                            </p>
-                            {{ form.email }}
-                            {% if form.email.errors %}
-                                <div class="alert alert-danger">
-                                    {% for error in form.email.errors %}
-                                        <p>{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
-                        <div class="form-group" id="phone-number">
-                            <p class="input-title">
-                                {{ form.phone_number.label }}
-                            </p>
-                            {{ form.phone_number }}
-                        </div>
-                        <div class="form-group full-width" id="message">
-                            <p class="input-title">
-                                {{ form.message.label }}
-                            </p>
-                            {{ form.message }}
-                        </div>
-                        <div class="form-group-small" id="captcha">
-                            <p class="input-title">
-                                {#                                {{ form.recaptcha.label }}#}
-                            </p>
-                            {{ form.recaptcha }}
-                            {% if form.recaptcha.errors %}
-                                <div class="alert alert-danger">
-                                    {{ form.recaptcha.errors }}
-                                </div>
-                            {% endif %}
-                        </div>
-
                         <div class="btn-wrapper full-width">
                             <button class="submit-btn" type="submit">
                                 Send
@@ -112,7 +62,6 @@
                 </article>
             </div>
         </div>
-
         <div id="successModal" class="modal-contacts" style="display: none;">
             <div class="modal-content-contacts">
                 <p>Your message has been sent successfully!</p>
@@ -122,7 +71,6 @@
     </section>
 
     <script src="https://www.google.com/recaptcha/api.js?render={{ RECAPTCHA_PUBLIC_KEY }}&hl={{ LANGUAGE_CODE }}"></script>
-
     <script>
         // If the form was successfully submitted, show the modal
         {% if success %}
@@ -132,9 +80,8 @@
         // Handle the "OK" button click
         document.getElementById("okButton").onclick = function () {
             // Redirect to the success_url
-            window.location.href = "{% url 'contacts' %}";
+            window.location.href = "{% url 'index' %}";
         };
 
     </script>
-
 {% endblock %}

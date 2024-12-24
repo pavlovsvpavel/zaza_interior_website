@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "zaza_interior.gallery.apps.GalleryConfig",
     "django_recaptcha",
+    "import_export"
 ]
 
 MIDDLEWARE = [

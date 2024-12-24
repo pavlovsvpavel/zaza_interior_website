@@ -1,34 +1,22 @@
 from django import forms
 from django_recaptcha.fields import ReCaptchaField
-from django_recaptcha.widgets import ReCaptchaV2Invisible, ReCaptchaV2Checkbox
+from django_recaptcha.widgets import ReCaptchaV2Checkbox
+
+from zaza_interior.web.models import ContactFormData
 
 
-class ContactForm(forms.Form):
-    first_name = forms.CharField(label='First Name', max_length=50, widget=forms.TextInput(attrs={
-        'class': 'input',
-        'id': 'first-name',
-    }))
+class ContactFormCreate(forms.ModelForm):
+    class Meta:
+        model = ContactFormData
+        fields = ("first_name", "last_name", "email", "phone_number", "message",)
 
-    last_name = forms.CharField(label='Last Name', max_length=50, widget=forms.TextInput(attrs={
-        'class': 'input',
-        'id': 'last-name',
-    }))
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if field_name == 'phone_number':
+                field.widget.attrs['placeholder'] = 'e.g. +359888123456'
+            else:
+                field.widget.attrs['placeholder'] = f"Enter your {field_name.replace('_', ' ')}"
 
-    email = forms.EmailField(label='Email', widget=forms.TextInput(attrs={
-        'class': 'input',
-        'id': 'email',
-    }))
-
-    phone_number = forms.CharField(label='Phone Number', widget=forms.TextInput(attrs={
-        'class': 'input',
-        'id': 'phone-number',
-    }))
-
-    message = forms.CharField(label='Message', widget=forms.Textarea(attrs={
-        'class': 'textinput',
-        'id': 'message',
-        'placeholder': 'Please enter your message...',
-        'style': 'resize: none;',
-    }))
 
     recaptcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
