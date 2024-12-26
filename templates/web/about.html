@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
+
 {% block main_content %}
     <script src="{% static "scripts/articlesAnimation.js" %}"></script>
     <section class="site-section site-about" id="articles-section">
@@ -8,54 +9,28 @@
             <div class="articles-wrapper-about">
                 <h1>{% trans "About" %}</h1>
                 <article>
-                    <h2>Our facility</h2>
-                    <p>Our facility is conveniently situated at the northern entrance of Sofia, close to the ring road
-                        and the
-                        airport (map), on area of more than 1000 sq.m. In the recently renovated building we have
-                        situated our high
-                        technological CNC machines made from the leaders of the furniture business– BRAND, HOLDZMA,
-                        HOLTZHER and
-                        ALTENDORF.
-
-                        The company owes her own press for veneering of panels. The specialized shop for lacquer
-                        painting guarantees
-                        the excellent quality of the products offered.</p>
+                    <h2>{% trans "Our facility" %}</h2>
+                    <p>{% trans "Our facility is conveniently situated at the northern entrance of Sofia, close to the ring road and the airport (map), on area of more than 1000 sq.m. In the recently renovated building we have situated our high technological CNC machines made from the leaders of the furniture business– BRAND, HOLDZMA, HOLTZHER and ALTENDORF. The company owes her own press for veneering of panels. The specialized shop for lacquer painting guarantees the excellent quality of the products offered." %}</p>
                 </article>
                 <article>
-                    <h2>Any Time</h2>
-                    <p>No matter weekend, holiday, weekday, early in the morning or late in the evening do not hesitate
-                        to contact us it is our business to be at our customers' disposal.
-                    </p>
+                    <h2>{% trans "Any Time" %}</h2>
+                    <p>{% trans "No matter weekend, holiday, weekday, early in the morning or late in the evening do not hesitate to contact us it is our business to be at our customers' disposal." %}</p>
                 </article>
                 <article>
-                    <h2>Any Budget</h2>
-                    <p>You’ll find the ZAZA solutions to be very affordable. We'll do our best to develop a personalized
-                        solution
-                        that fits your space and your budget. We also will match any competitor that you bring to us.
-                        Whether we are
-                        building a new kitchen or dreaming about a bookcase in the family room, we want to make sure we
-                        can fit our
-                        products and services into your budget.</p>
+                    <h2>{% trans "Any Budget" %}</h2>
+                    <p>{% trans "You’ll find the ZAZA solutions to be very affordable. We'll do our best to develop a personalized solution that fits your space and your budget. We also will match any competitor that you bring to us. Whether we are building a new kitchen or dreaming about a bookcase in the family room, we want to make sure we can fit our products and services into your budget." %}</p>
                 </article>
                 <article>
-                    <h2>Easy Process</h2>
-                    <p>ZAZA makes it all simple. We come to you...draw up plans that fit your needs and present them for
-                        your
-                        approval... Then schedule our professional installation. We’re quick, professional, and friendly
-                        — you’ll
-                        love the way we work.</p>
+                    <h2>{% trans "Easy Process" %}</h2>
+                    <p>{% trans "ZAZA makes it all simple. We come to you...draw up plans that fit your needs and present them for your approval... Then schedule our professional installation. We’re quick, professional, and friendly — you’ll love the way we work." %}</p>
                 </article>
                 <article>
-                    <h2>Amazingly Quick</h2>
-                    <p>You don’t have to endure weeks or even months of messy remodeling to get the custom space
-                        solutions you
-                        want. No matter how big is your project we will finish in time</p>
+                    <h2>{% trans "Amazingly Quick" %}</h2>
+                    <p>{% trans "You don’t have to endure weeks or even months of messy remodeling to get the custom space solutions you want. No matter how big is your project we will finish in time." %}</p>
                 </article>
                 <article>
-                    <h2>Solutions that last</h2>
-                    <p>Simply put, ZAZA solutions stand the test of time. We use durable, high-quality materials and
-                        professional
-                        installers. Our solutions are designed to look great and last a lifetime!</p>
+                    <h2>{% trans "Solutions that last" %}</h2>
+                    <p>{% trans "Simply put, ZAZA solutions stand the test of time. We use durable, high-quality materials and professional installers. Our solutions are designed to look great and last a lifetime!" %}</p>
                 </article>
             </div>
         </div>

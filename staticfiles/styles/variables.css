@@ -1,8 +1,8 @@
 :root {
     --site-bgnd: #000000;
     --site-header-bgnd: #2C2C2C;
-    --navigation-text-color: #fff;
+    --navigation-text-color: #ffffff;
     --site-logo-color: #35BF3B;
     --button-color-primary: #35BF3B;
-    --button-color-hover: #fff;
+    --button-color-hover: #ffffff;
 }
