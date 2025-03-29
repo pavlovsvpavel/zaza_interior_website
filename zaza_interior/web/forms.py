@@ -24,4 +24,4 @@ class ContactFormCreate(forms.ModelForm):
                 field.widget.attrs["placeholder"] = verbose_name
                 field.label = False
 
-    recaptcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    recaptcha = ReCaptchaField(widget=ReCaptchaV2Checkbox, required=True)
