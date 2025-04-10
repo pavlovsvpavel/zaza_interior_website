@@ -42,5 +42,10 @@ class ContactFormData(models.Model):
         verbose_name=_("Message"),
     )
 
+    created_on = models.DateTimeField(
+        auto_now_add=True,
+
+    )
+
     def __str__(self):
         return f"Submitted form from {self.first_name} {self.last_name}"
