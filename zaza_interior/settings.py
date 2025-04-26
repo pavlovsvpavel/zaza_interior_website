@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from decouple import config, Csv, AutoConfig
+from decouple import Csv, AutoConfig
 
 config = AutoConfig('envs')
 
