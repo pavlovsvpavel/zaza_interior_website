@@ -12,10 +12,6 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Production
 CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
-# Development nginx server
-if DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['http://localhost:81']
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -87,6 +83,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Development nginx server
+if DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:81']
+    AUTH_PASSWORD_VALIDATORS = ()
+
 LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
@@ -139,8 +140,9 @@ FILER_STORAGES = {
     },
 }
 
-RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY', cast=str, default='')
-RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY', cast=str, default='')
+RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_USE_SSL = True
 
 # Email Configuration
 EMAIL_BACKEND = config('EMAIL_BACKEND')
