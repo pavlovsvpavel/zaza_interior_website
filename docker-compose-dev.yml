@@ -27,6 +27,7 @@ services:
       - "127.0.0.1:81:80"
     volumes:
       - ./nginx/dev/conf.d:/etc/nginx/conf.d/:ro
+      - ./nginx/prod/custom_pages/50x.html:/usr/share/nginx/html/50x.html:ro
       - ./nginx/dev/logs:/var/log/nginx
       - ./static_files:/var/www/zaza_interior/static_files/:ro
       - ./mediafiles:/var/www/zaza_interior/mediafiles/:rw
