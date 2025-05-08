@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'zaza_interior.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db/db.sqlite3',
     }
 }
 
@@ -104,12 +104,10 @@ LANGUAGES = [
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
-STATIC_ROOT = config('STATIC_ROOT')
-
 STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
+STATIC_ROOT = config('STATIC_ROOT')
 
 MEDIA_URL = '/mediafiles/'
 MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'mediafiles'))

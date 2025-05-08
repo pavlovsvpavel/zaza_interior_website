@@ -1,0 +1,36 @@
+services:
+  web:
+    image: zaza_app_web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./envs/.env.prod
+    volumes:
+      - ./static_files:/var/www/zaza_interior/static_files/
+      - ./mediafiles:/var/www/zaza_interior/mediafiles/
+      - ./locale:/var/www/zaza_interior/locale/
+      - ./db:/home/app/db/
+    platform: linux/amd64
+
+  nginx:
+    container_name: zaza_app_nginx
+    image: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/prod/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/prod/conf.d:/etc/nginx/conf.d/:ro
+      - ./nginx/prod/logs:/var/log/nginx
+      - ./static_files:/var/www/zaza_interior/static_files/:ro
+      - ./mediafiles:/var/www/zaza_interior/mediafiles/:ro
+      - ./locale:/var/www/zaza_interior/locale/:ro
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+    depends_on:
+      - web

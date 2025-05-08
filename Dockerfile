@@ -1,23 +1,67 @@
-FROM python:3.12-slim
+# Stage 1: Build stage
+FROM python:3.12.10-slim AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+# System setup
 RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y apt-utils gettext libpq-dev gcc && \
+    apt-get install -y --no-install-recommends \
+        curl \
+        ca-certificates && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Install uv
+ADD https://astral.sh/uv/install.sh /uv-installer.sh
+RUN sh /uv-installer.sh && rm /uv-installer.sh
+ENV PATH="/root/.local/bin/:$PATH"
 
-ENV HOME=/home/app
-ENV APP_HOME=/home/app/web
+# Virtual environment
+RUN uv venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
+WORKDIR /app
+
+# Copy dependency files
+COPY pyproject.toml requirements.lock ./
+
+# Install dependencies
+RUN uv pip install -r requirements.lock
+
+# Stage 2: Runtime stage
+FROM python:3.12.10-slim
+
+# Environment setup
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/opt/venv/bin:$PATH"
+ENV APP_HOME=/home/app
+
+# Install only essential runtime dependencies
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends \
+    libpq5 \
+    gettext && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy virtual environment from builder
+COPY --from=builder /opt/venv /opt/venv
+
+# Create non-root user and app directory
+RUN useradd -m ubuntu
 WORKDIR $APP_HOME
 
-COPY ./requirements.txt .
+# Change ownership of the WORKDIR itself so the 'ubuntu' user can write to it
+RUN chown ubuntu:ubuntu $APP_HOME
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Copy application code
+COPY --chown=ubuntu:ubuntu . .
 
-COPY . .
+# Entrypoint setup
+RUN chmod +x $APP_HOME/entrypoint.sh && \
+    # Verify the script
+    [ -f entrypoint.sh ] && \
+    [ -x entrypoint.sh ] || exit 1
+
+ENTRYPOINT ["/home/app/entrypoint.sh"]
+CMD []
