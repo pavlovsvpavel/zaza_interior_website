@@ -29,7 +29,7 @@ services:
       - ./nginx/dev/conf.d:/etc/nginx/conf.d/:ro
       - ./nginx/dev/logs:/var/log/nginx
       - ./static_files:/var/www/zaza_interior/static_files/:ro
-      - ./mediafiles:/var/www/zaza_interior/mediafiles/:ro
+      - ./mediafiles:/var/www/zaza_interior/mediafiles/:rw
       - ./locale:/var/www/zaza_interior/locale/:ro
     depends_on:
       - web

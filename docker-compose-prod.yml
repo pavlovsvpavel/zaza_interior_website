@@ -1,6 +1,6 @@
 services:
   web:
-    image: zaza_app_web
+    container_name: zaza_app_web
     build:
       context: .
       dockerfile: Dockerfile
