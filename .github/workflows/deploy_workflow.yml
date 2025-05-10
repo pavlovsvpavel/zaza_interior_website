@@ -1,0 +1,20 @@
+name: Deploy to production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_to_prod_environment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Deploy to VM
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.GCP_INSTANCE_IP }}
+          username: ${{ secrets.GCP_USER }}
+          key: ${{ secrets.GCP_SSH_PRIVATE_KEY }}
+          script: |
+                cd /home/ubuntu/app/zaza_interior_website
+                sudo git pull origin main
+                sudo DOCKER_BUILDKIT=1 COMPOSE_BAKE=true docker compose -f docker-compose-prod.yml up -d --build
