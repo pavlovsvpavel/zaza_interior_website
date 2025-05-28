@@ -19,11 +19,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'zaza_interior.web.apps.WebConfig',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+
+    "zaza_interior.web.apps.WebConfig",
+    "zaza_interior.gallery.apps.GalleryConfig",
 
     "filer",
     "easy_thumbnails",
-    "zaza_interior.gallery.apps.GalleryConfig",
     "django_recaptcha",
     "import_export"
 ]
@@ -54,6 +57,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+                'zaza_interior.web.seo.context_processors.global_settings',
             ],
         },
     },
@@ -148,5 +152,8 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD',cast=str)
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', cast=str)
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+SITE_ID = config('SITE_ID', cast=int)
+GOOGLE_ANALYTICS_ID = config('GOOGLE_ANALYTICS_ID')

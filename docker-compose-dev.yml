@@ -1,7 +1,7 @@
 services:
   web:
     container_name: zaza_app_web
-    image: zaza_interior:prod
+    image: zaza_interior:dev
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,7 +12,6 @@ services:
       - ./envs/.env.dev
     environment:
       - GUNICORN_WORKERS=10
-      - GUNICORN_RELOAD=true
     volumes:
       - ./static_files:/var/www/zaza_interior/static_files/
       - ./mediafiles:/var/www/zaza_interior/mediafiles/
@@ -33,5 +32,6 @@ services:
       - ./static_files:/var/www/zaza_interior/static_files/:ro
       - ./mediafiles:/var/www/zaza_interior/mediafiles/:rw
       - ./locale:/var/www/zaza_interior/locale/:ro
+      - ./staticfiles/robots.txt:/usr/share/nginx/seo/robots.txt:ro
     depends_on:
       - web

@@ -17,4 +17,5 @@ jobs:
           script: |
                 cd /home/ubuntu/app/zaza_interior_website
                 sudo git pull origin main
-                sudo DOCKER_BUILDKIT=1 COMPOSE_BAKE=true docker compose -f docker-compose-prod.yml up -d --build
+                docker stop $(docker ps -aq)
+                docker compose -f docker-compose-prod.yml up -d --build
