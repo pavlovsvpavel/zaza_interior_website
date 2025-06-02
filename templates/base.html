@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manufacturing designer furnishings">
     <title>Zaza Interior</title>
     <link rel="stylesheet" href="{% static "styles/styles.css" %}">
     <link href="{% static "images/favicon.ico" %}" rel="icon" type="image/x-icon">
@@ -28,7 +29,7 @@
         <!-- End Google tag (gtag.js) -->
     {% endif %}
 </head>
-<script src="{% static "scripts/backToTopButton.js" %}"></script>
+<script src="{% static "scripts/backToTopButton.js" %}" defer></script>
 
 <body>
 <div class="site">
@@ -40,7 +41,7 @@
     </main>
     <button class="scrollToTopBtn"><strong>&#8679;</strong></button>
     {% include "web/footer.html" %}
-    {#            {% include "web/cookies-banner.html" %}#}
+    {% include "web/cookies-banner.html" %}
 </div>
 </body>
 </html>

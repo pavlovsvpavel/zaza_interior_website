@@ -62,12 +62,12 @@
         align-items: flex-start;
         position: fixed;
         top: 0;
-        right: -200%;
+        right: -100%;
         z-index: 10;
         background-color: #000;
         opacity: 95%;
         box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
-        transition: 0.8s ease-out;
+        transition: 0.5s ease-out;
     }
 
     .open-sidebar-button {
@@ -80,7 +80,7 @@
     }
 
     #sidebar-active:checked ~ .links-container {
-        right: 0;
+        right: -30%;
     }
 
     #sidebar-active:checked ~ #overlay {
@@ -90,6 +90,7 @@
         top: 0;
         left: 0;
         z-index: 9;
+        background-color: rgba(0, 0, 0, 0.9);
     }
 
     .hero-section {

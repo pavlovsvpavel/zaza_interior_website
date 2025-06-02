@@ -2,6 +2,11 @@ let page = 1;
 let loading = false;
 let images = [];
 
+const modal = document.getElementById("myModal");
+const modalImg = document.getElementById("fullImage");
+const imageName = document.getElementById("imageName");
+const imageDescription = document.getElementById("imageDescription");
+
 // Load images dynamically via AJAX
 function loadImages() {
     if (loading) return;
@@ -17,7 +22,7 @@ function loadImages() {
 
                 // Create thumbnail image element
                 let imgElement = document.createElement('img');
-                imgElement.src = image.thumbnail_url;  // Thumbnail URL
+                imgElement.src = image.thumbnail_url;
                 imgElement.alt = image.alt;
 
                 // Capture the current length of the images array before pushing the new image
@@ -51,7 +56,7 @@ function loadImages() {
             if (data.has_next) {
                 page += 1;
             } else {
-                window.removeEventListener('scroll', onScroll);  // No more pages to load
+                window.removeEventListener('scroll', onScroll);
             }
         });
 }
@@ -65,57 +70,84 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll);
 
-// Initial load
 loadImages();
 
-// Modal functionality for full-size image display
 let currentIndex = 0;
+
+// --- Keyboard Navigation Handler ---
+function handleKeyDown(event) {
+    if (modal.style.display !== "flex") return;
+
+    switch (event.key) {
+        case "ArrowLeft":
+            previousImage();
+            break;
+        case "ArrowRight":
+            nextImage();
+            break;
+        case "Escape":
+            closeModal();
+            break;
+    }
+}
+
+// --- Swipe Navigation Handlers ---
+let touchstartX = 0;
+const swipeThreshold = 50;
+
+function handleTouchStart(event) {
+    touchstartX = event.changedTouches[0].screenX;
+}
+
+function handleTouchEnd(event) {
+    if (images.length === 0) return;
+    const touchendX = event.changedTouches[0].screenX;
+    const swipeDistance = touchendX - touchstartX;
+
+    if (swipeDistance < -swipeThreshold) {
+        nextImage();
+    } else if (swipeDistance > swipeThreshold) {
+        previousImage();
+    }
+}
 
 // Function to open the modal with the full-size image
 function openModal(index) {
     currentIndex = index;
-    const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("fullImage");
-    const imageName = document.getElementById("imageName");
-    const imageDescription = document.getElementById("imageDescription");
     modal.style.display = "flex";
     if (images[currentIndex]) {
-        // Set the full-size image
         modalImg.src = images[currentIndex].url;
-        // Set the image name and description
         imageName.textContent = images[currentIndex].alt;
         imageDescription.textContent = images[currentIndex].description;
     } else {
         console.error("Full-size image URL is undefined for index: ", currentIndex);
     }
+
+
+    // Event listeners for keyboard and swipe
+    document.addEventListener('keydown', handleKeyDown);
+    modalImg.addEventListener('touchstart', handleTouchStart, {passive: true});
+    modalImg.addEventListener('touchend', handleTouchEnd, {passive: true});
 }
 
 // Function to close the modal
 function closeModal() {
-    const modal = document.getElementById("myModal");
     modal.style.display = "none";
 }
 
 // Function to navigate to the previous image in the modal
 function previousImage() {
     currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-    document.getElementById("fullImage").src = images[currentIndex].url;
-    document.getElementById("imageName").textContent = images[currentIndex].alt;
-    document.getElementById("imageDescription").textContent = images[currentIndex].description;
+    modalImg.src = images[currentIndex].url;
+    imageName.textContent = images[currentIndex].alt;
+    imageDescription.textContent = images[currentIndex].description;
 }
 
 // Function to navigate to the next image in the modal
 function nextImage() {
     currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-    document.getElementById("fullImage").src = images[currentIndex].url;
-    document.getElementById("imageName").textContent = images[currentIndex].alt;
-    document.getElementById("imageDescription").textContent = images[currentIndex].description;
+    modalImg.src = images[currentIndex].url;
+    imageName.textContent = images[currentIndex].alt;
+    imageDescription.textContent = images[currentIndex].description;
 }
 
-// Close the modal when clicking outside the image
-window.onclick = function (event) {
-    const modal = document.getElementById("myModal");
-    if (event.target === modal) {
-        closeModal();
-    }
-}

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 18:14+0200\n"
+"POT-Creation-Date: 2025-06-02 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pavel Pavlov\n"
 "Language-Team: Pavel Pavlov\n"
@@ -12,19 +12,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\gallery\main_gallery.html:9 .\templates\web\header.html:22
+#: templates/gallery/main_gallery.html:9 templates/web/header.html:22
 msgid "Gallery"
 msgstr "Фотогалерия"
 
-#: .\templates\web\about.html:10 .\templates\web\header.html:23
+#: templates/web/about.html:10 templates/web/header.html:23
 msgid "About"
 msgstr "За нас"
 
-#: .\templates\web\about.html:12
+#: templates/web/about.html:12
 msgid "Our facility"
 msgstr "Нашата база"
 
-#: .\templates\web\about.html:13
+#: templates/web/about.html:13
 msgid ""
 "Our facility is conveniently situated at the northern entrance of Sofia, "
 "close to the ring road and the airport (map), on area of more than 1000 sq."
@@ -42,11 +42,11 @@ msgstr ""
 "фурнироване на плоскости. Специализирания цех за лаково боядисване гарантира "
 "отличното качество на предлаганите мебели."
 
-#: .\templates\web\about.html:16
+#: templates/web/about.html:16
 msgid "Any Time"
 msgstr "По всяко време"
 
-#: .\templates\web\about.html:17
+#: templates/web/about.html:17
 msgid ""
 "No matter weekend, holiday, weekday, early in the morning or late in the "
 "evening do not hesitate to contact us it is our business to be at our "
@@ -55,11 +55,11 @@ msgstr ""
 "Без значение събота или неделя, празник или делник, сутрин или вечер, можете "
 "да ни потърсите и ние с радост ще се отзовем на вашите нужди."
 
-#: .\templates\web\about.html:20
+#: templates/web/about.html:20
 msgid "Any Budget"
 msgstr "Всякакъв бюджет"
 
-#: .\templates\web\about.html:21
+#: templates/web/about.html:21
 msgid ""
 "You’ll find the ZAZA solutions to be very affordable. We'll do our best to "
 "develop a personalized solution that fits your space and your budget. We "
@@ -73,11 +73,11 @@ msgstr ""
 "мечтаете за цялостно ново обзавеждане, ние искаме да сме сигурни, че с "
 "нашите продукти и услуги можем да отговорим на вашите изисквания и бюджет."
 
-#: .\templates\web\about.html:24
+#: templates/web/about.html:24
 msgid "Easy Process"
 msgstr "Лесно"
 
-#: .\templates\web\about.html:25
+#: templates/web/about.html:25
 msgid ""
 "ZAZA makes it all simple. We come to you...draw up plans that fit your needs "
 "and present them for your approval... Then schedule our professional "
@@ -91,11 +91,11 @@ msgstr ""
 "не се мръщим на клиентите си. След нас оставяме чисто. Ще харесате начина, "
 "по който работим."
 
-#: .\templates\web\about.html:28
+#: templates/web/about.html:28
 msgid "Amazingly Quick"
 msgstr "Бърза изработка"
 
-#: .\templates\web\about.html:29
+#: templates/web/about.html:29
 msgid ""
 "You don’t have to endure weeks or even months of messy remodeling to get the "
 "custom space solutions you want. No matter how big is your project we will "
@@ -104,11 +104,11 @@ msgstr ""
 "Защо да губите ценно време в очакване на вашите нови мебели? Независимо от "
 "големината на проекта, ние ще приключим в уговореното време."
 
-#: .\templates\web\about.html:32
+#: templates/web/about.html:32
 msgid "Solutions that last"
 msgstr "Надеждност"
 
-#: .\templates\web\about.html:33
+#: templates/web/about.html:33
 msgid ""
 "Simply put, ZAZA solutions stand the test of time. We use durable, high-"
 "quality materials and professional installers. Our solutions are designed to "
@@ -117,11 +117,11 @@ msgstr ""
 "Нашите мебели са конструирани от професионални дизайнери с дългогодишен опит "
 "в бранша, което гарантира тяхната функционалност, надеждност и дълготрайност."
 
-#: .\templates\web\contacts.html:13 .\templates\web\header.html:24
+#: templates/web/contacts.html:13 templates/web/header.html:24
 msgid "Contact Us"
 msgstr "Контакти"
 
-#: .\templates\web\contacts.html:16
+#: templates/web/contacts.html:16
 msgid ""
 "Whether you have a question, feedback, or need assistance, feel free to "
 "reach out."
@@ -129,24 +129,37 @@ msgstr ""
 "Независимо дали имате въпрос, обратна връзка или се нуждаете от помощ, не се "
 "колебайте да се свържете с нас."
 
-#: .\templates\web\contacts.html:18
+#: templates/web/contacts.html:18
 msgid "Just fill out the form, and we'll get back to you as soon as possible."
 msgstr ""
 "Просто попълнете формуляра и ние ще се свържем с вас възможно най-скоро."
 
-#: .\templates\web\contacts.html:58
+#: templates/web/contacts.html:58
 msgid "Send"
 msgstr "Изпрати"
 
-#: .\templates\web\header.html:21 .\templates\web\how-it-works.html:9
+#: templates/web/cookies-banner.html:4
+msgid ""
+"By clicking 'Accept', you agree storing of cookies on your device to enhance "
+"site navigation, analyze site usage and improve marketing."
+msgstr ""
+"Кликвайки върху 'Приемам', вие се съгласявате да съхранявате бисквитки на "
+"вашето устройство за подобряване навигацията на сайта, анализиране "
+"използването на сайта и подобряване на маркетинга."
+
+#: templates/web/cookies-banner.html:5
+msgid "Accept"
+msgstr "Приемам"
+
+#: templates/web/header.html:21 templates/web/how-it-works.html:9
 msgid "How it works"
 msgstr "Как работим"
 
-#: .\templates\web\how-it-works.html:11
+#: templates/web/how-it-works.html:11
 msgid "Listen"
 msgstr "Чуваме"
 
-#: .\templates\web\how-it-works.html:12
+#: templates/web/how-it-works.html:12
 msgid ""
 "After discussing your lifestyle and needs during the complimentary "
 "consultation, your Design Consultant will help you assess what's important "
@@ -157,11 +170,11 @@ msgstr ""
 "важно за вас и как вашето пространство да бъде използвано по най-добрия "
 "начин."
 
-#: .\templates\web\how-it-works.html:15
+#: templates/web/how-it-works.html:15
 msgid "Visualize"
 msgstr "Визуализираме"
 
-#: .\templates\web\how-it-works.html:16
+#: templates/web/how-it-works.html:16
 msgid ""
 "Now the fun begins! During the consultation, we'll use a number of tools so "
 "you can visualize various options for your new space. Your Design Consultant "
@@ -174,11 +187,11 @@ msgstr ""
 "които в по-късен етап ще се превърнат в работен проект, надлежно илюстриран "
 "на 2D или 3D визуализация."
 
-#: .\templates\web\how-it-works.html:19
+#: templates/web/how-it-works.html:19
 msgid "Design"
 msgstr "Дизайн"
 
-#: .\templates\web\how-it-works.html:20
+#: templates/web/how-it-works.html:20
 msgid ""
 "Your Design Consultant will design your project to fill your needs. Designs "
 "will have dimensions shown so you know just what to expect. The cost of your "
@@ -190,11 +203,11 @@ msgstr ""
 "вашия проект ще зависи от материалите, които изберете, от компонентите, "
 "които включва дизайна и от големината на проекта."
 
-#: .\templates\web\how-it-works.html:23
+#: templates/web/how-it-works.html:23
 msgid "Install"
 msgstr "Монтираме"
 
-#: .\templates\web\how-it-works.html:24
+#: templates/web/how-it-works.html:24
 msgid ""
 "Once you approve your design, we'll tell you how to prepare for your "
 "installation and what to expect. Installation will occur with minimal "
@@ -212,40 +225,40 @@ msgstr ""
 "насладите веднага на вашата нова придобивка, нашите монтажници ще почистят "
 "дома ви и ще го оставят така както са го заварили."
 
-#: .\templates\web\index.html:11
+#: templates/web/index.html:11
 msgid "ZAZA Interior"
 msgstr "ZAZA Interior"
 
-#: .\templates\web\index.html:12
+#: templates/web/index.html:12
 msgid ""
 " has been making homes more beautiful and practical for more than 15 years"
 msgstr " прави домовете по-красиви и практични от повече от 15 години"
 
-#: .\templates\web\index.html:14
+#: templates/web/index.html:14
 msgid "Our projects"
 msgstr "Наши проекти"
 
-#: .\templates\web\index.html:22
+#: templates/web/index.html:22
 msgid "Our team is experienced and professionally trained."
 msgstr "Нашият персонал е опитен и професионално обучен"
 
-#: .\templates\web\index.html:26
+#: templates/web/index.html:26
 msgid "Any time"
 msgstr "По всяко време"
 
-#: .\templates\web\index.html:30
+#: templates/web/index.html:30
 msgid "Any budget"
 msgstr "Всякакъв бюджет"
 
-#: .\templates\web\index.html:34
+#: templates/web/index.html:34
 msgid "Quick build"
 msgstr "Бърза изработка"
 
-#: .\templates\web\index.html:38
+#: templates/web/index.html:38
 msgid "Reliability"
 msgstr "Надеждност"
 
-#: .\templates\web\index.html:50
+#: templates/web/index.html:50
 msgid ""
 "We guarantee to match the price of competitors’ plans using the same "
 "materials and design."
@@ -253,7 +266,7 @@ msgstr ""
 "Ние ви гарантираме, че ще отговорим на всяка конкурентна цена, използвайки "
 "същите материали и дизайн."
 
-#: .\templates\web\index.html:54
+#: templates/web/index.html:54
 msgid ""
 "In most cases, our products can be installed in one day, saving you time and "
 "hassles."
@@ -261,7 +274,7 @@ msgstr ""
 "В повечето случаи, нашите продукти могат да бъдат монтирани в рамките на 1 "
 "ден , спестявайки ви време и неприятности."
 
-#: .\templates\web\index.html:58
+#: templates/web/index.html:58
 msgid ""
 "Our designers are full of great ideas for your home. Just tell us what you "
 "are dreaming for."
@@ -269,16 +282,16 @@ msgstr ""
 "Нашите дизайнери са пълни със страхотни идеи за вашия дом! Само споделете "
 "какво си представяте."
 
-#: .\templates\web\index.html:62
+#: templates/web/index.html:62
 msgid "We’ll leave your home as neat and clean as it was when we arrived."
 msgstr ""
 "Ние оставяме домът ви така уютен и чист, както е бил преди ние да дойдем."
 
-#: .\templates\web\index.html:66
+#: templates/web/index.html:66
 msgid "Our products are simply superior in craftsmanship and design."
 msgstr "Нашите продукти са изпипани по отношение на изработка и дизайн."
 
-#: .\templates\web\index.html:70
+#: templates/web/index.html:70
 msgid ""
 "What we offer is not just functionality or design. Our offer is a smart "
 "combination of both."
@@ -286,52 +299,52 @@ msgstr ""
 "Ние предлагаме не просто функционалност или дизайн. Ние предлагаме една "
 "умела комбинация от двете."
 
-#: .\templates\web\index.html:74
+#: templates/web/index.html:74
 msgid ""
 "Customer satisfaction is our standard of excellence. If you’re not "
 "satisfied, we’re not finished."
 msgstr ""
 "Задоволяването на нашите клиенти е нашето мерило за добре свършена работа."
 
-#: .\templates\web\index.html:77
+#: templates/web/index.html:77
 msgid "Contact us"
 msgstr "Контакти"
 
-#: .\zaza_interior\gallery\validators.py:8
+#: zaza_interior/gallery/validators.py:8
 msgid "The maximum file size should not exceed 9MB"
 msgstr "Максималният размер на файла не трябва да надвишава 9 MB"
 
-#: .\zaza_interior\gallery\validators.py:12
+#: zaza_interior/gallery/validators.py:12
 msgid ""
 "Unsupported file type. Please upload an image file (.jpg, .jpeg, .png, .gif)"
 msgstr ""
 "Неподдържан тип файл. Моля, качете файл с изображение (.jpg, .jpeg, .png, ."
 "gif)"
 
-#: .\zaza_interior\web\forms.py:18
+#: zaza_interior/web/forms.py:18
 msgid "e.g. +359XXXXXXXXX"
 msgstr "пример: +359XXXXXXXXX"
 
-#: .\zaza_interior\web\models.py:15
+#: zaza_interior/web/models.py:15
 msgid "First Name"
 msgstr "Име"
 
-#: .\zaza_interior\web\models.py:21
+#: zaza_interior/web/models.py:21
 msgid "Last Name"
 msgstr "Фамилия"
 
-#: .\zaza_interior\web\models.py:26
+#: zaza_interior/web/models.py:26
 msgid "Email"
 msgstr "Имейл"
 
-#: .\zaza_interior\web\models.py:36
+#: zaza_interior/web/models.py:36
 msgid "Phone number"
 msgstr "Телефон"
 
-#: .\zaza_interior\web\models.py:42
+#: zaza_interior/web/models.py:42
 msgid "Message"
 msgstr "Съобщение"
 
-#: .\zaza_interior\web\validators.py:6
+#: zaza_interior/web/validators.py:6
 msgid "Enter a valid phone number."
 msgstr "Въведете валиден телефон"
