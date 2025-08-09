@@ -1,7 +1,9 @@
 ## :link: [Website demo](https://zaza-interior.mooo.com)
 
-## Technologies used:&nbsp;&nbsp;&nbsp;[![Technologies](https://skillicons.dev/icons?i=python,django,html,css,js,docker,gcp)](https://skillicons.dev)
+**Technologies used:**
 
+[![Technologies](https://skillicons.dev/icons?i=python,django,html,css,js,docker,gcp)](https://skillicons.dev)
+---
 :arrow_forward: **Home page**
 
 ![home_page](https://github.com/user-attachments/assets/1c4e839f-0d30-475f-8a70-264e5ac3f447)
