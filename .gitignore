@@ -164,4 +164,3 @@ cython_debug/
 .idea/
 static_files/
 mediafiles/
-/uv.lock
