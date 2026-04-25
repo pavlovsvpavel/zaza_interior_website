@@ -4,13 +4,13 @@ asgiref==3.11.1
     # via
     #   zaza-interior-website (pyproject.toml)
     #   django
-certifi==2026.2.25
+certifi==2026.4.22
     # via
     #   zaza-interior-website (pyproject.toml)
     #   requests
-chardet==6.0.0
+chardet==7.4.3
     # via zaza-interior-website (pyproject.toml)
-charset-normalizer==3.4.4
+charset-normalizer==3.4.7
     # via
     #   zaza-interior-website (pyproject.toml)
     #   reportlab
@@ -23,7 +23,7 @@ diff-match-patch==20241021
     # via
     #   zaza-interior-website (pyproject.toml)
     #   django-import-export
-django==6.0.2
+django==6.0.4
     # via
     #   zaza-interior-website (pyproject.toml)
     #   django-filer
@@ -35,7 +35,7 @@ django-filer==3.4.4
     # via zaza-interior-website (pyproject.toml)
 django-import-export==4.4.0
     # via zaza-interior-website (pyproject.toml)
-django-polymorphic==4.11.1
+django-polymorphic==4.11.2
     # via
     #   zaza-interior-website (pyproject.toml)
     #   django-filer
@@ -49,24 +49,24 @@ et-xmlfile==2.0.0
     # via
     #   zaza-interior-website (pyproject.toml)
     #   openpyxl
-gunicorn==25.1.0
+gunicorn==25.3.0
     # via zaza-interior-website (pyproject.toml)
-idna==3.11
+idna==3.13
     # via
     #   zaza-interior-website (pyproject.toml)
     #   requests
-lxml==6.0.2
+lxml==6.1.0
     # via
     #   zaza-interior-website (pyproject.toml)
     #   svglib
 openpyxl==3.1.5
     # via zaza-interior-website (pyproject.toml)
-packaging==26.0
+packaging==26.2
     # via
     #   zaza-interior-website (pyproject.toml)
     #   gunicorn
     #   wheel
-pillow==12.1.1
+pillow==12.2.0
     # via
     #   zaza-interior-website (pyproject.toml)
     #   easy-thumbnails
@@ -80,9 +80,9 @@ reportlab==4.4.10
     #   zaza-interior-website (pyproject.toml)
     #   easy-thumbnails
     #   svglib
-requests==2.32.5
+requests==2.33.1
     # via zaza-interior-website (pyproject.toml)
-setuptools==82.0.0
+setuptools==82.0.1
     # via zaza-interior-website (pyproject.toml)
 sqlparse==0.5.5
     # via
@@ -104,7 +104,7 @@ tinycss2==1.5.1
     #   svglib
 typing-extensions==4.15.0
     # via django-polymorphic
-tzdata==2025.3
+tzdata==2026.2
     # via zaza-interior-website (pyproject.toml)
 urllib3==2.6.3
     # via
@@ -115,5 +115,5 @@ webencodings==0.5.1
     #   zaza-interior-website (pyproject.toml)
     #   cssselect2
     #   tinycss2
-wheel==0.46.3
+wheel==0.47.0
     # via zaza-interior-website (pyproject.toml)
